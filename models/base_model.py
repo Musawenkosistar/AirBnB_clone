@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-"""BaseModel class"""
 
 import models
 import uuid
@@ -32,7 +31,7 @@ class BaseModel:
         if name in ['created_at', 'updated_at']:
             if isinstance(value, str):
                 try:
-                    value = datetime.strptime(value, '%Y-%m-%dT%H:%M:%S.%f')
+                    value = datetime.strptime(value, '%y-%m-%dT%H:%M:%S.%f')
                 except ValueError:
                     raise AttributeError("Invalid value: ({}) for name: ({})"
                                          .format(value, name))
